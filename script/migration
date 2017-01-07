@@ -1,0 +1,23 @@
+#!/usr/bin/env ruby
+
+if ARGV.length.zero?
+  puts "Usage: ./script/migration migration_name"
+  exit(0)
+end
+
+MIGRATION_CONTENT = <<-MIGRATION
+Sequel.migration do
+  up do
+  end
+
+  down do
+  end
+end
+MIGRATION
+
+timestamp = Time.now.getutc.strftime("%Y%m%d%H%M%S")
+file = "db/migrations/#{timestamp}_#{ARGV[0]}.rb"
+
+File.open(file, "w") { |f| f.write MIGRATION_CONTENT }
+
+puts "Created migration #{file}"
