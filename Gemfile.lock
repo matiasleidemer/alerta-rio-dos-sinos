@@ -4,18 +4,24 @@ GEM
     mini_portile2 (2.1.0)
     nokogiri (1.7.0.1)
       mini_portile2 (~> 2.1.0)
+    pg (0.19.0)
     puma (3.6.2)
     rack (2.0.1)
+    rake (12.0.0)
     roda (2.21.0)
       rack
+    sequel (4.42.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   nokogiri
+  pg
   puma
+  rake
   roda
+  sequel
 
 BUNDLED WITH
    1.13.6
