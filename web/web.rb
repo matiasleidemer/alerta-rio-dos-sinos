@@ -6,14 +6,14 @@ module RioDosSinos
     plugin :json
 
     route do |r|
-      # GET /ping
-      r.get 'ping' do
-        { status: 'OK', date: Time.now.utc.iso8601 }
-      end
-
       # GET /
       r.root do
        r.redirect '/ping'
+      end
+
+      # GET /ping
+      r.get 'ping' do
+        RioDosSinos::Ping.call
       end
     end
   end
